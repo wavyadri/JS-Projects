@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Open+Sans&display=swap");
+
+// @mixin center-content() {
+//   display: flex;
+//   flex-direction: column;
+//   //   justify-content: center;
+//   align-items: center;
+// }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 90%;
+  //   border: 2px solid black;
+}
+
+section {
+  max-width: 90%;
+  margin: auto;
+  overflow: hidden;
+  background: green;
+}
+
+h1 {
+  font-family: "Bungee Shade", cursive;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+.main {
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: grey;
+  ul {
+    list-style-type: circle;
+    li {
+      display: flex;
+      background: hotpink;
+      padding: 10px 0;
+    }
+  }
+}
+
+footer {
+  height: 5vh;
+  width: 100vw;
+  background-color: red;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}

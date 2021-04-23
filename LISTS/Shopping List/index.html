@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Shopping List</title>
+</head>
+<body>
+    <section class="main">
+        <div class="container">
+            <h1>Shopping list</h1>
+            <div class="input">
+                <input type="text" name="list" placeholder="Type Here" id="item" required/>
+                <button type="submit" id="add">Add</button>
+                <button type="submit" id="clear">Clear List</button>
+            </div>
+        </div>
+    </section>
+    <section class="list">
+            <ul id="list">
+                <li>
+                    <p>item</p>
+                    <button id="remove">X</button>
+                    <button id="done">Done</button>
+                </li>
+                <li>
+                    <p>item</p>
+                    <button class="remove">X</button>
+                    <button class="complete">Done</button>
+                </li>
+                <li>
+                    <p>item</p>
+                    <button class="remove">X</button>
+                    <button class="complete">Done</button>
+                </li>
+            </ul>
+    </section>
+    <footer class="footer">
+            <p>Created by Adriana Calvo-Matos</p>
+    </footer>
+    
+    <script src="app.js"></script>
+</body>
+</html>
