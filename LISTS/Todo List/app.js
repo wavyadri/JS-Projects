@@ -1,24 +1,37 @@
 // empty array to start
-let todoItems = []
+let todoItems = [];
 
 // create a new todo object from input
 // push to todoItems
-addTodo(text) => {
+function addTodo(text) {
     const todo = {
         text,
         checked: false,
-        id: Date.now()
+        id: Date.now(),
     }
 
-    todoItems.push(todo)
+    todoItems.push(todo);
+    console.log(todoItems);
 }
 
 // Select form element
-const form = document.querySelector('.js-form')
+const form = document.querySelector('.js-form');
 // Add a submit event listener
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', e => {
     // prevent default aka page refresh on click
-    e.preventDefault()
+    e.preventDefault();
     // select text input
-    const input = document.querySelector('.js-todo-input')
+    const input = document.querySelector('.js-todo-input');
+
+    // remove whitespace with trim()
+    const text = input.value.trim();
+    // get input value
+    if (text !== '') {
+        // grab text
+        addTodo(text);
+        // reset input to empty
+        input.value = '';
+        // reset focus
+        input.focus();
+    }
 })
