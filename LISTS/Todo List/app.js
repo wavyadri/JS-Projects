@@ -4,6 +4,9 @@ let todoItems = [];
 // we want to take the items added to the array and display them
 // append li for each item to the already existing ul in the DOM
 function renderTodo(todo) {
+    // persist app state
+    localStorage.setItem('todoItemsRef', JSON.stringify(todoItems));
+
     // select first element with a class of 'js-todo-list'
     const list = document.querySelector('.js-todo-list');
 
@@ -125,3 +128,15 @@ list.addEventListener('click', event => {
         deleteTodo(itemKey);
     }
 });
+
+// render existing items when page reloaded
+document.addEventListener('DOMContentLoaded', () => {
+    const ref = localStorage.getItem('todoItemsRef');
+    if (ref) {
+      todoItems = JSON.parse(ref);
+      todoItems.forEach(t => {
+        renderTodo(t);
+      });
+    }
+  });
+  

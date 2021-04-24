@@ -117,3 +117,29 @@ input[type="text"] {
 .fa-minus-circle {
   color: red;
 }
+
+/* Empty State */
+
+.empty-state {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.checklist-icon {
+  margin-bottom: 20px;
+}
+
+.empty-state__title,
+.empty-state__description {
+  margin-bottom: 20px;
+}
+
+.todo-list:empty {
+  display: none;
+}
+
+.todo-list:empty + .empty-state {
+  display: flex;
+}
