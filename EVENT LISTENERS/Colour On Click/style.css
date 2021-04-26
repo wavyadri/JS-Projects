@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio&display=swap");
+
+:root {
+  --dark-color: #131313;
+  --primary-color: #e3e4db;
+  --secondary-color: #826aed;
+  --accent-1-color: #34a0ab;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Antonio", sans-serif;
+  height: 100vh;
+  width: auto;
+  overflow: hidden;
+  background: var(--primary-color);
+  color: var(--dark-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10vh;
+}
+
+.container {
+  margin: 5vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.square {
+  cursor: pointer;
+  height: 200px;
+  width: 200px;
+  border: 2px solid var(--dark-color);
+  background: grey;
+  transition: 0.2s ease;
+}
+
+.red {
+  background: red !important;
+}
+
+.blue {
+  background: blue !important;
+}
+
+.yellow {
+  background: yellow !important;
+}
+
+.green {
+  background: green !important;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  height: 5vh;
+  min-width: 100%;
+  position: fixed;
+  background: var(--dark-color);
+  color: var(--primary-color);
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+footer a:hover {
+  color: var(--accent-1-color);
+}
