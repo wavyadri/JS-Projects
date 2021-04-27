@@ -15,3 +15,8 @@ square3.addEventListener('click', function() {
 square4.addEventListener('click', function() {
     square4.classList.toggle("yellow");
 })
+
+// add windows background and audio when all four squares active
+// clean up code so it does not need to repeat for each square
+    // could use an array of colours
+    
