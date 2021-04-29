@@ -1,5 +1,3 @@
-// const original = document.querySelectorAll('holder');
-// const originalHTML = original.innerHTML;
 const past = document.getElementById('past');
 const present = document.getElementById('present');
 const future = document.getElementById('future');
@@ -19,24 +17,19 @@ const getTarot = async () => {
   const tarot = await response.json();
   clear();
   createTarotCard(tarot);
+  console.log(original[0].innerHTML);
 }
 
 // clear cards of any existing HTML
 function clear() {
-  past.innerHTML = '';
-  present.innerHTML = '';
-  future.innerHTML = '';
+  for (let i = 0; i < numberOfCards; i++) {
+    array[i].innerHTML='';
+  }
 }
 
-// set html back to how it originally was
-// maybe use s/t like this 
-    // cardEl.innerHTML = cardInnerHTML;
-    //     final.appendChild(cardEl);
-// function set() {
-//   past.innerHTML = originalHTML;
-//   present.innerHTML = originalHTML;
-//   future.innerHTML = originalHTML;
-// }
+function set() {
+  window.location = "/"
+}
 
 function createTarotCard(tarot) {
   for (let i = 0; i < numberOfCards; i++) {
@@ -62,4 +55,4 @@ function createTarotCard(tarot) {
 begin.addEventListener('click', fetchTarot);
 
 // Start Again button
-restart.addEventListener('click', clear);
+restart.addEventListener('click', set);
