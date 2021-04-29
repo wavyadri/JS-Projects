@@ -17,7 +17,6 @@ const getTarot = async () => {
   const tarot = await response.json();
   clear();
   createTarotCard(tarot);
-  console.log(original[0].innerHTML);
 }
 
 // clear cards of any existing HTML

@@ -41,6 +41,7 @@ body {
   @include flex-col();
   @include centre();
   background-color: $cream;
+  padding-bottom: 5vh;
 }
 
 header {
@@ -151,6 +152,17 @@ footer {
 
     &:hover {
       color: $primary;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .all-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 3.5rem;
+    .present {
+      margin-top: 0rem;
     }
   }
 }

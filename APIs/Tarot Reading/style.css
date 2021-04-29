@@ -22,6 +22,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #e3e4db;
+  padding-bottom: 5vh;
 }
 
 header {
@@ -176,5 +177,18 @@ footer a {
 
 footer a:hover {
   color: #826aed;
+}
+
+@media screen and (max-width: 768px) {
+  .all-cards {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 3.5rem;
+  }
+  .all-cards .present {
+    margin-top: 0rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
