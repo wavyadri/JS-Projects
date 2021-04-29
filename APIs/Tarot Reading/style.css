@@ -93,7 +93,7 @@ button {
   padding: 10px 15px;
   cursor: pointer;
   user-select: none;
-  margin: 3rem;
+  margin: 10px;
 }
 
 button:hover {
