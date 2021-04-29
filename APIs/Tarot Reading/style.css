@@ -1,36 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Astloch:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sail&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Milonga&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Astloch&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-
-:root {
-  --dark-color: #131313;
-  --primary-color: #e3e4db;
-  --secondary-color: #826aed;
-  --accent-1-color: #34a0ab;
-}
-
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--primary-color);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #e3e4db;
 }
 
 header {
-  margin-top: 5vh;
-}
-
-ol {
-  padding: 10px;
+  margin-top: 10px;
 }
 
 h1 {
@@ -45,79 +40,141 @@ h1,
 h2 {
   text-align: center;
   font-family: "Astloch", cursive;
-  color: var(--dark-color);
-  /* font-family: "Sail", cursive; */
-  /* font-family: "Milonga", cursive; */
+  color: #131313;
+}
+
+ol {
+  margin: 10px;
 }
 
 p,
 li {
   font-family: "Open Sans", sans-serif;
+  color: #131313;
+}
+
+button {
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 10px;
+}
+
+button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.btn-begin {
+  color: #e3e4db;
+  background-color: #826aed;
+}
+
+.btn-restart {
+  color: #e3e4db;
+  background-color: #131313;
 }
 
 .all-cards {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   grid-gap: 3.5rem;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-}
-
-.card .box {
-  height: 400px;
-  width: 300px;
-  border: 2px solid black;
-  margin-top: 1rem;
-  background-color: var(--secondary-color);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  overflow: hidden;
+  margin: 10px;
 }
 
 .all-cards .present {
   margin-top: 3rem;
 }
 
-button {
-  color: var(--primary-color);
-  border: none;
-  background-color: var(--secondary-color);
-  text-align: center;
-  border-radius: 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-  user-select: none;
-  margin: 10px;
+.all-cards .card {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-button:hover {
-  transform: scale(1.1);
+.all-cards .card .holder {
+  height: 450px;
+  width: 320px;
+  border: 2px solid #131313;
+  margin-top: 1rem;
+  background-color: #131313;
+  color: #e3e4db;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+.all-cards .card .holder i {
+  color: #e3e4db;
+}
+
+.all-cards .card .holder .tarot-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.all-cards .card .holder .tarot-box h2,
+.all-cards .card .holder .tarot-box p {
+  color: #e3e4db;
 }
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   bottom: 0;
   height: 5vh;
   min-width: 100%;
   position: fixed;
-  background: var(--dark-color);
-  color: var(--primary-color);
+  background: #131313;
+  color: #e3e4db;
+}
+
+footer p {
+  color: #e3e4db;
 }
 
 footer a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: #e3e4db;
 }
 
 footer a:hover {
-  color: var(--secondary-color);
+  color: #826aed;
 }
+/*# sourceMappingURL=style.css.map */

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Tarot Reading - 3 Card Spread</title>
 </head>
@@ -14,24 +15,35 @@
     <ol>
         <li>Set your intentions for the reading.</li>
         <li>When you are ready, click "Begin".</li>
-        <li>Click "Begin" again to draw new cards.</li>
+        <li>If you wish to redraw, click "Start Again".</li>
+        <li>Click "Begin" again for a new reading.</li>
     </ol>
-    <button class="btn-begin">Begin</button>
+    <div class="buttons">
+        <button class="btn-begin">Begin</button>
+        <button class="btn-restart">Start Again</button>
+    </div>
     <div class="container">
         <div class="all-cards">
             <div class="card past">
                 <h2>Past</h2>
-                <div class="box" id="past"></div>
+                <div class="holder" id="past">
+                    <h5>Helllooooo</h5>
+                    <div class="far fa-moon fa-3x"></div>  
+                </div>
                 <div class="name-past"></div>
             </div>
             <div class="card present">
                 <h2>Present</h2>
-                <div class="box" id="present"></div>
+                <div class="holder" id="present">
+                    <i class="far fa-sun fa-3x"></i>  
+                </div>
                 <div class="name-past"></div>
             </div>
             <div class="card future">
                 <h2>Future</h2>
-                <div class="box" id="future"></div>
+                <div class="holder" id="future">
+                    <i class="far fa-star fa-3x"></i>
+                </div>
                 <div class="name-past"></div>
             </div>
         </div>

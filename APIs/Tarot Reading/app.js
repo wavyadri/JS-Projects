@@ -1,8 +1,13 @@
-// const tarot_box = document.getElementById('all_cards');
+// const original = document.querySelectorAll('holder');
+// const originalHTML = original.innerHTML;
 const past = document.getElementById('past');
 const present = document.getElementById('present');
 const future = document.getElementById('future');
 const begin = document.querySelector('.btn-begin');
+const restart = document.querySelector('.btn-restart');
+
+const array = [past, present, future];
+const numberOfCards = array.length;
 
 const fetchTarot = async () => {
     await getTarot();
@@ -12,66 +17,49 @@ const getTarot = async () => {
   const endpoint = "https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=3";
   const response = await fetch(endpoint);
   const tarot = await response.json();
-  // insert a clear div function
   clear();
   createTarotCard(tarot);
 }
 
-// create a clear div function
+// clear cards of any existing HTML
 function clear() {
   past.innerHTML = '';
   present.innerHTML = '';
   future.innerHTML = '';
 }
 
+// set html back to how it originally was
+// maybe use s/t like this 
+    // cardEl.innerHTML = cardInnerHTML;
+    //     final.appendChild(cardEl);
+// function set() {
+//   past.innerHTML = originalHTML;
+//   present.innerHTML = originalHTML;
+//   future.innerHTML = originalHTML;
+// }
 
 function createTarotCard(tarot) {
-  const pastEl = document.createElement('div');
-  pastEl.classList.add('box');
-  const pastInnerHTML = `
-      <div class="tarot-box">
-        <h2 class="tarotName">${tarot.cards[0].name}</h2>
-        <p class="tarotDesc">Meaning (upright): ${tarot.cards[0].meaning_up}</p>
-        <p class="tarotType">Type: ${tarot.cards[0].type}</p>
-        <p class="tarotValue">Value: ${tarot.cards[0].value}</p>
-        <p class
+  for (let i = 0; i < numberOfCards; i++) {
+    const final = array[i];
+    const cardEl = document.createElement('div');
+    cardEl.classList.add('box');
+    const cardInnerHTML = `
+        <div class="tarot-box">
+          <h2 class="tarotName">${tarot.cards[i].name}</h2>
+          <p class="tarotDesc"><b>Meaning (upright):</b> ${tarot.cards[i].meaning_up}</p>
+          <p class="tarotType"><b>Type:</b> ${tarot.cards[i].type}</p>
+          <p class="tarotValue"><b>Value:</b> ${tarot.cards[i].value}</p>
+          <p class
+        </div>
       </div>
-    </div>
-  `;
-  pastEl.innerHTML = pastInnerHTML;
-  past.appendChild(pastEl);
-
-  const presentEl = document.createElement('div');
-  presentEl.classList.add('box');
-  const presentInnerHTML = `
-      <div class="tarot-box">
-        <h2 class="tarotName">${tarot.cards[1].name}</h2>
-        <p class="tarotDesc">Meaning (upright): ${tarot.cards[1].meaning_up}</p>
-        <p class="tarotType">Type: ${tarot.cards[1].type}</p>
-        <p class="tarotValue">Value: ${tarot.cards[1].value}</p>
-        <p class
-      </div>
-    </div>
-  `;
-  presentEl.innerHTML = presentInnerHTML;
-  present.appendChild(presentEl);
-
-  const futureEl = document.createElement('div');
-  futureEl.classList.add('box');
-  const futureInnerHTML = `
-      <div class="tarot-box">
-        <h2 class="tarotName">${tarot.cards[2].name}</h2>
-        <p class="tarotDesc">Meaning (upright): ${tarot.cards[2].meaning_up}</p>
-        <p class="tarotType">Type: ${tarot.cards[2].type}</p>
-        <p class="tarotValue">Value: ${tarot.cards[2].value}</p>
-        <p class
-      </div>
-    </div>
-  `;
-  futureEl.innerHTML = futureInnerHTML;
-  future.appendChild(futureEl);
+    `;
+    cardEl.innerHTML = cardInnerHTML;
+    final.appendChild(cardEl);
+  }
 }
 
-// fetchTarot();
-
+// Begin button
 begin.addEventListener('click', fetchTarot);
+
+// Start Again button
+restart.addEventListener('click', clear);
