@@ -27,7 +27,7 @@ function clear() {
 }
 
 function set() {
-  window.location = "/"
+  location.reload();
 }
 
 function createTarotCard(tarot) {
