@@ -1,8 +1,8 @@
-const tarot_box = document.getElementById('all_cards');
+// const tarot_box = document.getElementById('all_cards');
 const past = document.getElementById('past');
 const present = document.getElementById('present');
 const future = document.getElementById('future');
-const cards_number = 3;
+const begin = document.querySelector('.btn-begin');
 
 const fetchTarot = async () => {
     await getTarot();
@@ -12,7 +12,16 @@ const getTarot = async () => {
   const endpoint = "https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=3";
   const response = await fetch(endpoint);
   const tarot = await response.json();
+  // insert a clear div function
+  clear();
   createTarotCard(tarot);
+}
+
+// create a clear div function
+function clear() {
+  past.innerHTML = '';
+  present.innerHTML = '';
+  future.innerHTML = '';
 }
 
 
@@ -63,4 +72,6 @@ function createTarotCard(tarot) {
   future.appendChild(futureEl);
 }
 
-fetchTarot();
+// fetchTarot();
+
+begin.addEventListener('click', fetchTarot);
