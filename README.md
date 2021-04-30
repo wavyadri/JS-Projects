@@ -6,3 +6,7 @@ Build core JS skills
 04/26 Completed EVENT LISTENERS > Colour On Click. 
       To-do: Add windows background + start up sound if all 4 colours are active.
              Re-write code using conditions or cases (?) so each square does not require its own function.
+             
+04/29 Completed APIs > Tarot Reading.
+      Used APIs https://github.com/ekelen/tarot-api
+      Utilized for loops to condense code from 200+ lines to 57 lines of JavaScript.
