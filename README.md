@@ -10,3 +10,5 @@ Build core JS skills
 04/29 Completed APIs > Tarot Reading.
       Used APIs https://github.com/ekelen/tarot-api
       Utilized for loops to condense code from 200+ lines to 57 lines of JavaScript.
+      
+05/01 Welcome to May! I am choosing to begin a new vanilla js project using a new API to continue my practice with fetch and async..await.
