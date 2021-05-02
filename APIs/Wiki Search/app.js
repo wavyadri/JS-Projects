@@ -8,6 +8,7 @@ async function handleSubmit(e) {
     const inputValue = document.querySelector('.js-search-input').value;
     // remove whitespace from both ends of input
     const searchQuery = inputValue.trim();
+    console.log(searchQuery);
 
     const searchResults = document.querySelector('.js-search-results');
     // clear the previous results
