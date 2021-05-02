@@ -11,7 +11,7 @@ const input = document.querySelector('.search-input');
 const searchResults = document.getElementById('search-results');
 
 // spinner
-const spinner = document.querySelector('.js-spinner');
+const spinner = document.getElementById('js-spinner');
 
 async function formSubmit(e) {
     // prevent default
@@ -26,7 +26,7 @@ async function formSubmit(e) {
 
     try {
         // get data from api
-        await getUni(inputValue);
+        const uniList = await getUni(inputValue);
 
         // check if input matches any data in api
         const matches = uniList.filter(uni => {
@@ -35,6 +35,10 @@ async function formSubmit(e) {
         });
 
         // if no
+        // if (uniList.query.searchinfo.totalhits === 0) {
+        //     alert('No results found. Try different keywords.');
+        //     return;
+        // }
         // if yes, output html
         createUniResults(matches);
 
@@ -51,13 +55,14 @@ async function formSubmit(e) {
 // }
 
 async function getUni(inputValue) {
-    const endpoint = `http://universities.hipolabs.com/search?name=${inputValue}&country=${inputValue}`;
+    // const endpoint = `http://universities.hipolabs.com/search?name=${inputValue}&country=${inputValue}`;
+    const endpoint = `http://universities.hipolabs.com/search?{"$or":[{"name":"${inputValue}"},{"country":"${inputValue}"}]}`;
     const response = await fetch(endpoint);
     if (!response.ok) {
         throw Error(respone.statusText);
     }
-    const uniList = await response.json();
-    return uniList;
+    const json = await response.json();
+    return json;
 }
 
 // Output results in HTML
