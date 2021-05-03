@@ -31,7 +31,7 @@ async function formSubmit(e) {
         // check if input matches any data in api
         const matches = uniList.filter(uni => {
         // negative lookbehind and ahead
-        const regex = new RegExp(`\\b${inputValue}(\\b)`,'gi');
+        const regex = new RegExp(`(^|\\s)${inputValue}($|\\s)`,'gi');
         return uni.name.match(regex) || uni.country.match(regex);
         });
 
