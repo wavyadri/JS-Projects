@@ -34,17 +34,25 @@ async function formSubmit(e) {
         const regex = new RegExp(`(^|\\s)${inputValue}($|\\s)`,'gi');
         return uni.name.match(regex) || uni.country.match(regex);
         });
-        console.log(matches);
+        // alpha sort results
+        matches.sort(function(a, b) {
+            var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+            var nameB = b.name.toUpperCase();
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+            // names must be equal
+            return 0;
+          });
 
-        // if no
+        // if no matches to search query
         if(matches.length == 0){
             createNoMatch();
         }
-        // if (uniList.query.searchinfo.totalhits === 0) {
-        //     alert('No results found. Try different keywords.');
-        //     return;
-        // }
-        // if yes, output html
+
         createUniResults(matches);
 
     } catch (err) {
@@ -54,10 +62,6 @@ async function formSubmit(e) {
         spinner.classList.add('hidden');
     }
 }
-
-// const fetchUni = async () => {
-//     await getUni;
-// }
 
 async function getUni(inputValue) {
     const endpoint = `http://universities.hipolabs.com/search?{"$or":[{"name":"${inputValue}"},{"country":"${inputValue}"}]}`;
