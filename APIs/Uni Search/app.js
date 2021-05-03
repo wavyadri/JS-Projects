@@ -34,10 +34,11 @@ async function formSubmit(e) {
         const regex = new RegExp(`(^|\\s)${inputValue}($|\\s)`,'gi');
         return uni.name.match(regex) || uni.country.match(regex);
         });
+        console.log(matches);
 
         // if no
-        if(matches.length === 0){
-            alert('No matches. Try different keywords.');
+        if(matches.length == 0){
+            createNoMatch();
         }
         // if (uniList.query.searchinfo.totalhits === 0) {
         //     alert('No results found. Try different keywords.');
@@ -59,7 +60,6 @@ async function formSubmit(e) {
 // }
 
 async function getUni(inputValue) {
-    // const endpoint = `http://universities.hipolabs.com/search?name=${inputValue}&country=${inputValue}`;
     const endpoint = `http://universities.hipolabs.com/search?{"$or":[{"name":"${inputValue}"},{"country":"${inputValue}"}]}`;
     console.log(endpoint)
     const response = await fetch(endpoint);
@@ -70,26 +70,36 @@ async function getUni(inputValue) {
     return json;
 }
 
+// Output no matches error in HTML
+function createNoMatch() {
+    const noMatch = document.createElement('div');
+    noMatch.classList.add('no-match');
+    noMatch.innerHTML = `
+        <div class="box no-match-text">
+            <h3>No match found!</h3>
+            <p>Double check your spelling or try a different search.</p>
+        </div>
+    `;
+    searchResults.appendChild(noMatch);
+}
+
+
 // Output results in HTML
 function createUniResults(matches) {
     matches.forEach(result => {
         const url = `${result['web_pages'][0]}`;
-
-        // append the search result to the DOM
-        searchResults.insertAdjacentHTML(
-            'beforeend',
-            `<div class="result-item">
-                <h3 class="result-title">
-                    <a href="${url}" target="_blank" rel="noopener">${result.name}</a>
-                </h3>
-                <a href="${url}" class="result-link" target="_blank" rel="noopener">${url}</a>
-                <span class="result-snippet">${result.country}</span><br>
-          </div>`
-        );
+        const uniMatch = document.createElement('div');
+        uniMatch.classList.add('uni-match');
+        uniMatch.innerHTML = `
+            <div class="box">
+                <div class="result-title">
+                    <h3>${result.name} | ${result.country}</h3>
+                </div>
+                <a href="${url}" class="uni-match-link" target="_blank" rel="noopener">${url}</a>
+            </div>
+          `;
+        searchResults.appendChild(uniMatch);
     });
-
-
-
 }
 
 
