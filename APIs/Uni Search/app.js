@@ -31,13 +31,13 @@ async function formSubmit(e) {
         // check if input matches any data in api
         const matches = uniList.filter(uni => {
         // negative lookbehind and ahead
-        const regex = new RegExp(`\\b${inputValue}(?!\S)`,'gi');
+        const regex = new RegExp(`\\b${inputValue}(\\b)`,'gi');
         return uni.name.match(regex) || uni.country.match(regex);
         });
 
         // if no
         if(matches.length === 0){
-            console.log('No matches');
+            alert('No matches. Try different keywords.');
         }
         // if (uniList.query.searchinfo.totalhits === 0) {
         //     alert('No results found. Try different keywords.');
@@ -61,6 +61,7 @@ async function formSubmit(e) {
 async function getUni(inputValue) {
     // const endpoint = `http://universities.hipolabs.com/search?name=${inputValue}&country=${inputValue}`;
     const endpoint = `http://universities.hipolabs.com/search?{"$or":[{"name":"${inputValue}"},{"country":"${inputValue}"}]}`;
+    console.log(endpoint)
     const response = await fetch(endpoint);
     if (!response.ok) {
         throw Error(respone.statusText);
