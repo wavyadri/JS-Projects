@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
-$black: #131313;
-$light: #e3e4db;
-$primary: #826aed;
+$black: #3c362a;
+$light: #e8f7ee;
+$primary: #b8c4bb;
+$secondary: #663f46;
+$danger: #e63946;
 
 @mixin flex-col {
   display: flex;
@@ -19,6 +21,8 @@ $primary: #826aed;
   padding: 8px 15px;
   cursor: pointer;
   user-select: none;
+  background: $black;
+  color: $light;
 }
 
 * {
@@ -30,8 +34,7 @@ $primary: #826aed;
 body {
   @include flex-col();
   font-family: "Noto Sans", sans-serif;
-  color: $black;
-  padding-bottom: 5vh;
+  padding-bottom: 6vh;
 }
 header {
   margin-top: 20px;
@@ -40,12 +43,14 @@ header {
 h1 {
   font-size: 3rem;
   text-align: center;
+  color: $black;
 }
 
 h2 {
   text-align: center;
   font-size: 1.6rem;
   margin-top: 30px;
+  color: $black;
 }
 
 .search-form {
@@ -58,6 +63,7 @@ h2 {
   i {
     font-size: 40px;
     margin-right: 15px;
+    color: $black;
   }
 
   input {
@@ -109,18 +115,35 @@ footer {
   @include flex-col();
   .no-match-text {
     text-align: center;
-    border: 3px solid red;
+    border: 8px solid $danger;
+    background: $secondary;
+    h3,
+    p {
+      color: $light;
+    }
   }
 }
 
 .box {
-  width: 550px;
+  width: 700px;
   height: 100%;
-  background: lightgray;
+  background: $primary;
   margin: 5px 0;
   padding: 8px;
   border-radius: 4px;
-  border: 1px solid grey;
+  border: 1px solid $black;
+
+  h3 {
+    font-size: 1.2rem;
+    color: $black;
+  }
+
+  a {
+    color: $black;
+    &:hover {
+      color: $secondary;
+    }
+  }
 }
 
 .result-title {
@@ -216,5 +239,57 @@ footer {
   100%,
   0% {
     transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  button {
+    padding: 5px 10px;
+    margin-top: 10px;
+  }
+
+  .search-form {
+    display: flex;
+    flex-direction: column;
+    min-width: 80w;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+
+    i {
+      display: none;
+    }
+
+    input {
+      height: 30px;
+      width: 80vw;
+      text-indent: 10px;
+      margin-right: 0px;
+    }
+  }
+
+  .box {
+    width: 90%;
+    height: 100%;
+
+    h3 {
+      font-size: 1rem;
+    }
+    a {
+      font-size: 13px;
+    }
   }
 }

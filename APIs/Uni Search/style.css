@@ -21,8 +21,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-family: "Noto Sans", sans-serif;
-  color: #131313;
-  padding-bottom: 5vh;
+  padding-bottom: 6vh;
 }
 
 header {
@@ -32,12 +31,14 @@ header {
 h1 {
   font-size: 3rem;
   text-align: center;
+  color: #3c362a;
 }
 
 h2 {
   text-align: center;
   font-size: 1.6rem;
   margin-top: 30px;
+  color: #3c362a;
 }
 
 .search-form {
@@ -57,6 +58,7 @@ h2 {
 .search-form i {
   font-size: 40px;
   margin-right: 15px;
+  color: #3c362a;
 }
 
 .search-form input {
@@ -69,7 +71,7 @@ h2 {
 button {
   border: none;
   text-align: center;
-  border: 1px solid #131313;
+  border: 1px solid #3c362a;
   border-radius: 5px;
   padding: 8px 15px;
   cursor: pointer;
@@ -77,6 +79,8 @@ button {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  background: #3c362a;
+  color: #e8f7ee;
 }
 
 button:hover {
@@ -102,21 +106,21 @@ footer {
   height: 5vh;
   min-width: 100%;
   position: fixed;
-  background: #131313;
-  color: #e3e4db;
+  background: #3c362a;
+  color: #e8f7ee;
 }
 
 footer p {
-  color: #e3e4db;
+  color: #e8f7ee;
 }
 
 footer a {
   text-decoration: none;
-  color: #e3e4db;
+  color: #e8f7ee;
 }
 
 footer a:hover {
-  color: #826aed;
+  color: #b8c4bb;
 }
 
 #search-results {
@@ -143,17 +147,38 @@ footer a:hover {
 .no-match .no-match-text,
 .uni-match .no-match-text {
   text-align: center;
-  border: 3px solid red;
+  border: 8px solid #e63946;
+  background: #663f46;
+}
+
+.no-match .no-match-text h3,
+.no-match .no-match-text p,
+.uni-match .no-match-text h3,
+.uni-match .no-match-text p {
+  color: #e8f7ee;
 }
 
 .box {
-  width: 550px;
+  width: 700px;
   height: 100%;
-  background: lightgray;
+  background: #b8c4bb;
   margin: 5px 0;
   padding: 8px;
   border-radius: 4px;
-  border: 1px solid grey;
+  border: 1px solid #3c362a;
+}
+
+.box h3 {
+  font-size: 1.2rem;
+  color: #3c362a;
+}
+
+.box a {
+  color: #3c362a;
+}
+
+.box a:hover {
+  color: #663f46;
 }
 
 .result-title {
@@ -190,7 +215,7 @@ footer a:hover {
   display: block;
   width: 25%;
   height: 25%;
-  background-color: #131313;
+  background-color: #3c362a;
   border-radius: 100%;
   -webkit-animation: sk-chase-dot-before 2s infinite ease-in-out both;
           animation: sk-chase-dot-before 2s infinite ease-in-out both;
@@ -307,6 +332,60 @@ footer a:hover {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+  }
+  p {
+    font-size: 13px;
+  }
+  button {
+    padding: 5px 10px;
+    margin-top: 10px;
+  }
+  .search-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-width: 80w;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 10px;
+  }
+  .search-form i {
+    display: none;
+  }
+  .search-form input {
+    height: 30px;
+    width: 80vw;
+    text-indent: 10px;
+    margin-right: 0px;
+  }
+  .box {
+    width: 90%;
+    height: 100%;
+  }
+  .box h3 {
+    font-size: 1rem;
+  }
+  .box a {
+    font-size: 13px;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -15,8 +15,8 @@ const spinner = document.getElementById('js-spinner');
 
 async function formSubmit(e) {
     // prevent default
-    e.preventDefault(); 
-    // get form input, then clear
+    e.preventDefault();
+
     const inputValue = input.value.trim();
     clearInput(input);
     // clear output html
@@ -30,7 +30,7 @@ async function formSubmit(e) {
 
         // check if input matches any data in api
         const matches = uniList.filter(uni => {
-        // negative lookbehind and ahead
+        // starts and ends with a whitespace OR word boundary
         const regex = new RegExp(`(^|\\s)${inputValue}($|\\s)`,'gi');
         return uni.name.match(regex) || uni.country.match(regex);
         });
@@ -48,13 +48,17 @@ async function formSubmit(e) {
             return 0;
           });
 
+        // if event triggered without input by user
+        if(inputValue.length === 0) {
+            createNoMatch();
+            return 0;
+        }
         // if no matches to search query
         if(matches.length == 0){
             createNoMatch();
+            return 0;
         }
-
         createUniResults(matches);
-
     } catch (err) {
         console.log(err);
         alert('Failed to match your search query. Please try again.');
@@ -65,7 +69,6 @@ async function formSubmit(e) {
 
 async function getUni(inputValue) {
     const endpoint = `http://universities.hipolabs.com/search?{"$or":[{"name":"${inputValue}"},{"country":"${inputValue}"}]}`;
-    console.log(endpoint)
     const response = await fetch(endpoint);
     if (!response.ok) {
         throw Error(respone.statusText);
@@ -106,8 +109,7 @@ function createUniResults(matches) {
     });
 }
 
-
-// can these be combined with an if/else?
+// clear
 function clearInput(query) {
     query.value = '';
 }
@@ -115,4 +117,3 @@ function clearInput(query) {
 function clearHTML(section) {
     section.innerHTML = '';
 }
-
