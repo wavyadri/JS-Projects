@@ -8,7 +8,12 @@ Build core JS skills
              Re-write code using conditions or cases (?) so each square does not require its own function.
              
 04/29 Completed APIs > Tarot Reading.
-      Used APIs https://github.com/ekelen/tarot-api
+      Used API https://github.com/ekelen/tarot-api
       Utilized for loops to condense code from 200+ lines to 57 lines of JavaScript.
       
 05/01 Welcome to May! I am choosing to begin a new vanilla js project using a new API to continue my practice with fetch and async..await.
+
+05/04 Completed API > Uni Search.
+      Used API https://github.com/Hipo/university-domains-list-api
+      Project is running locally, however, failing when served on Github with the following error "Failed to load resource: net::ERR_CONNECTION_REFUSED".
+      To-do: fix error with fetch API, add pagination.
