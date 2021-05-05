@@ -148,14 +148,14 @@ footer a:hover {
 .uni-match .no-match-text {
   text-align: center;
   border: 8px solid #e63946;
-  background: #663f46;
+  background: #b8c4bb;
 }
 
 .no-match .no-match-text h3,
 .no-match .no-match-text p,
 .uni-match .no-match-text h3,
 .uni-match .no-match-text p {
-  color: #e8f7ee;
+  color: #3c362a;
 }
 
 .box {
