@@ -17,3 +17,5 @@ Build core JS skills
       Used API https://github.com/Hipo/university-domains-list-api
       Project is running locally, however, failing when served on Github with the following error "Failed to load resource: net::ERR_CONNECTION_REFUSED".
       To-do: fix error with fetch API, add pagination.
+      
+05/05 Working through some tutorials today, adapting functions to arrow format to get comfortable with the syntax.
