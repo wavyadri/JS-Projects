@@ -18,11 +18,6 @@ async function formSubmit(e) {
     e.preventDefault();
 
     const inputValue = input.value.trim();
-    // if event triggered without input by user
-    if(inputValue.length === 0) {
-        createNoMatch();
-        return 0;
-    }
     clearInput(input);
     // clear output html
     clearHTML(searchResults);
@@ -53,7 +48,11 @@ async function formSubmit(e) {
             return 0;
           });
 
-        
+        // if event triggered without input by user
+        if(inputValue.length === 0) {
+            createNoMatch();
+        return 0;
+        }
         // if no matches to search query
         if(matches.length == 0){
             createNoMatch();
