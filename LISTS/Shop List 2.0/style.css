@@ -1,4 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Open+Sans&display=swap");
+.fill-in {
+  outline: none !important;
+  border: 2px solid #e63946;
+}
+
+.done {
+  color: lime !important;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.hidden {
+  display: none !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +38,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #3c362a;
+  padding-bottom: 6vh;
 }
 
 header {
@@ -74,7 +92,7 @@ form {
 
 form input {
   height: 30px;
-  width: 500px;
+  width: 375px;
   margin-right: 15px;
   border: 2px solid #3c362a;
   text-indent: 5px;
@@ -93,6 +111,7 @@ button {
           user-select: none;
   background: #b8c4bb;
   color: #3c362a;
+  font-size: 1rem;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
@@ -102,6 +121,82 @@ button:hover {
           transform: translate(5px, -5px);
   -webkit-box-shadow: -5px 5px 0px #3c362a;
           box-shadow: -5px 5px 0px #3c362a;
+}
+
+.shopping-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px 0;
+}
+
+.shopping-list .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 450px;
+  height: 30px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0;
+}
+
+.shopping-list .list .js-remove {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 15px;
+  margin-right: 3px;
+  color: #e63946;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.shopping-list .list .js-remove:hover {
+  -webkit-transform: translate(3px, -3px);
+          transform: translate(3px, -3px);
+  text-shadow: -3px 3px 0px #3c362a;
+}
+
+.shopping-list .list .list-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.shopping-list .list .list-items .js-done {
+  padding: 15px;
+  color: #e8f7ee;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.shopping-list .list .list-items .js-done:hover {
+  -webkit-transform: translate(3px, -3px);
+          transform: translate(3px, -3px);
+  text-shadow: -3px 3px 0px #3c362a;
 }
 
 footer {
