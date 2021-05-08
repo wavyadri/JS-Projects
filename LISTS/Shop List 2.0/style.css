@@ -5,7 +5,7 @@
 }
 
 .done {
-  color: lime !important;
+  color: #2afc98 !important;
 }
 
 .strike {
@@ -37,7 +37,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #3c362a;
+  color: #011627;
   padding-bottom: 6vh;
 }
 
@@ -94,14 +94,14 @@ form input {
   height: 30px;
   width: 375px;
   margin-right: 15px;
-  border: 2px solid #3c362a;
+  border: 2px solid #011627;
   text-indent: 5px;
 }
 
 button {
   border: none;
   text-align: center;
-  border: 1px solid #3c362a;
+  border: 1px solid #011627;
   border-radius: 5px;
   padding: 6px 12px;
   cursor: pointer;
@@ -109,8 +109,8 @@ button {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  background: #b8c4bb;
-  color: #3c362a;
+  background: #f0eff4;
+  color: #011627;
   font-size: 1rem;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
@@ -119,8 +119,8 @@ button {
 button:hover {
   -webkit-transform: translate(5px, -5px);
           transform: translate(5px, -5px);
-  -webkit-box-shadow: -5px 5px 0px #3c362a;
-          box-shadow: -5px 5px 0px #3c362a;
+  -webkit-box-shadow: -5px 5px 0px #011627;
+          box-shadow: -5px 5px 0px #011627;
 }
 
 .shopping-list {
@@ -170,7 +170,7 @@ button:hover {
 .shopping-list .list .js-remove:hover {
   -webkit-transform: translate(3px, -3px);
           transform: translate(3px, -3px);
-  text-shadow: -3px 3px 0px #3c362a;
+  text-shadow: -3px 3px 0px #011627;
 }
 
 .shopping-list .list .list-items {
@@ -187,7 +187,7 @@ button:hover {
 
 .shopping-list .list .list-items .js-done {
   padding: 15px;
-  color: #e8f7ee;
+  color: #7c8483;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   cursor: pointer;
@@ -196,13 +196,13 @@ button:hover {
 .shopping-list .list .list-items .js-done:hover {
   -webkit-transform: translate(3px, -3px);
           transform: translate(3px, -3px);
-  text-shadow: -3px 3px 0px #3c362a;
+  text-shadow: -3px 3px 0px #011627;
 }
 
 footer {
   height: 5vh;
   width: 100vw;
-  background-color: #3c362a;
+  background-color: #011627;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -218,15 +218,15 @@ footer {
 }
 
 footer p {
-  color: #e8f7ee;
+  color: #7c8483;
 }
 
 footer a {
-  color: #e8f7ee;
+  color: #7c8483;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: #b8c4bb;
+  color: #f0eff4;
 }
 /*# sourceMappingURL=style.css.map */

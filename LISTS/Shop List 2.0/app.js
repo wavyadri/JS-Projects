@@ -1,14 +1,5 @@
-// type in input, submit or click event to output HTML
-// output has CHECK and X
-// CHECK click event strikes out item
-// X click event deletes item
-// item counter: item add = +1. item deleted OR completed = -1.
-// when only one item left unchecked, trigger a reminder
 
 let items = [];
-// if X, remove item
-let itemsCount = [];
-// if X OR CHECK, remove item
 
 const form = document.querySelector('.js-form');
 const shoppingList = document.querySelector('.shopping-list')
@@ -30,7 +21,6 @@ handleSubmit = (e) => {
 
         items.push(inputText);
         createItem(items[items.length-1]);
-        updateItemsCount(); //////////////////////////////////
 
         input.classList.remove('fill-in');
         clearInput(input);
@@ -57,27 +47,18 @@ createItem = (newItem) => {
 
 checkItem = (e) => {
     if (e.target.classList.contains('js-done')) {
-        console.log('correct target')
-        // text strike through
-        const text = document.querySelector('.js-list-text');
-        text.classList.toggle('strike');
-
-        // checkmark colour
-        const doneIcon = document.querySelector('.js-done');
-        doneIcon.classList.toggle('done');
+        // change check mark colour
+        e.target.classList.toggle('done');
+        // strike through text
+        e.target.nextElementSibling.classList.toggle('strike');       
     }
 }
 
 removeItem = (e) => {
     if (e.target.classList.contains('js-remove')) {
-        const removeIcon = document.querySelector('.list');
-        removeIcon.classList.add('hidden');
-        // remove from array
-        // then call createItem again to re render without it part of the arr
+        // remove task from list
+        e.target.parentElement.classList.add('hidden');
     }
-}
-
-updateItemsCount = () => {
 }
 
 clearInput = (target) => {
