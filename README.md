@@ -24,5 +24,7 @@ Build core JS skills
       I'm not a fan of the code structure, I relied heavily on CSS and event targets. Although I did learn a lot of cool new tricks and have a better understanding of e.target.
       To-do: Re-write code using arrays and objects.
              Add counter.
-            
+             
+05/12 Completed v2 of LISTS > Shop List 2.0.
+      While testing mobile responsive version, I discovered that I need to raise the threshold of max-width to 430px to account for the latest iphone 12 pro max.         
              
