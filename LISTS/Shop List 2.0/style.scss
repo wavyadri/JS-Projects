@@ -77,7 +77,6 @@ h1 {
 }
 
 h2 {
-  text-transform: uppercase;
   margin-bottom: 10px;
 }
 
@@ -151,6 +150,20 @@ button:hover {
       }
     }
   }
+}
+
+.empty-state {
+  @include flex-col();
+  display: none;
+  margin-top: 20px;
+}
+
+.shopping-list:empty {
+  display: none;
+}
+
+.shopping-list:empty + .empty-state {
+  display: flex;
 }
 
 footer {
