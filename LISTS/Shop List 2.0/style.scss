@@ -191,7 +191,7 @@ footer {
 }
 
 // Mobile Responsive
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 450px) {
   h1 {
     font-size: 2rem;
   }
@@ -214,6 +214,7 @@ footer {
     input {
       height: 30px;
       width: 300px;
+      margin-top: 10px;
       margin-right: 0px;
     }
     button {
