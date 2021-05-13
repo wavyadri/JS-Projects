@@ -19,3 +19,10 @@ Build core JS skills
       To-do: fix error with fetch API, add pagination.
       
 05/05 Working through some tutorials today, adapting functions to arrow format to get comfortable with the syntax.
+
+05/08 Complete v1 of LISTS > Shop List 2.0.
+      I'm not a fan of the code structure, I relied heavily on CSS and event targets. Although I did learn a lot of cool new tricks and have a better understanding of e.target.
+      To-do: Re-write code using arrays and objects.
+             Add counter.
+            
+             
