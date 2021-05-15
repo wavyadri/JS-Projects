@@ -12,12 +12,40 @@
     </header>
     <form id="register">
         <div class="input-group">
+            <label for="pronouns">Pronouns: </label>
+            <select name="pronouns" id="pronouns">
+                <option value="none" selected="selected"> -- Choose one -- </option>
+                <option value="she">She</option>
+                <option value="he">He</option>
+                <option value="they">They</option>
+                <option value="ze">Ze</option>
+                <option value="ve">Ve</option>
+                <option value="na">Rather not say</option>
+            </select>
+            <input type="text" name="full-name" id="full-name">
+        </div>
+        <div class="input-group">
             <label for="full-name">Full Name: </label>
             <input type="text" name="full-name" id="full-name">
         </div>
-        <div class="input-group"></div>
-        <div class="input-group"></div>
-
+        <div class="input-group">
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div class="input-group">
+            <label for="password">Password: </label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div class="input-group">
+            <p>Do you accept that your information will be used for nothing?</p>
+            <label for="yes">Yes</label>
+            <input type="checkbox" name="yes" id="terms-yes">
+            <label for="no">No</label>
+            <input type="checkbox" name="no" id="terms-no">
+        </div>
+        <div class="input-group">
+            <input type="submit" value="Submit" id="submit">
+        </div>        
     </form>
 </body>
 </html>
