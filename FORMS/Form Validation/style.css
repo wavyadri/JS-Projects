@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Oxygen", sans-serif;
+  padding-bottom: 5vh;
+}
+
+header {
+  margin-top: 5vh;
+}
+
+header h1 {
+  margin-bottom: 20px;
+}
+
+form {
+  padding: 20px 20px;
+  border: 2px solid #011627;
+  border-radius: 5px;
+}
+
+form input {
+  height: 30px;
+  text-indent: 5px;
+}
+
+form .input-group {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form .input-group label {
+  margin-bottom: 5px;
+}
+
+form .privacy {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30px;
+}
+
+form .privacy input {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+
+form .submit input {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+footer {
+  height: 5vh;
+  width: 100vw;
+  background-color: #011627;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+
+footer p {
+  color: #7c8483;
+}
+
+footer a {
+  color: #7c8483;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #f0eff4;
+}
+/*# sourceMappingURL=style.css.map */

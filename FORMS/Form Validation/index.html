@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Form Validation</title>
 </head>
 <body>
@@ -11,10 +12,10 @@
         <h1>Sign Up</h1>
     </header>
     <form id="register">
-        <div class="input-group">
-            <label for="pronouns">Pronouns: </label>
+        <div class="input-group pronouns">
+            <label for="pronouns">Pronoun</label>
             <select name="pronouns" id="pronouns">
-                <option value="none" selected="selected"> -- Choose one -- </option>
+                <option value="none" selected="selected"> -- Select one -- </option>
                 <option value="she">She</option>
                 <option value="he">He</option>
                 <option value="they">They</option>
@@ -22,30 +23,36 @@
                 <option value="ve">Ve</option>
                 <option value="na">Rather not say</option>
             </select>
+        </div>
+        <div class="input-group full-name">
+            <label for="full-name">Full Name</label>
             <input type="text" name="full-name" id="full-name">
         </div>
-        <div class="input-group">
-            <label for="full-name">Full Name: </label>
-            <input type="text" name="full-name" id="full-name">
-        </div>
-        <div class="input-group">
-            <label for="email">Email: </label>
+        <div class="input-group email">
+            <label for="email">Email</label>
             <input type="email" name="email" id="email">
         </div>
-        <div class="input-group">
-            <label for="password">Password: </label>
+        <div class="input-group password">
+            <label for="password">Password</label>
             <input type="password" name="password" id="password">
         </div>
-        <div class="input-group">
+        <div class="input-group privacy">
             <p>Do you accept that your information will be used for nothing?</p>
-            <label for="yes">Yes</label>
-            <input type="checkbox" name="yes" id="terms-yes">
-            <label for="no">No</label>
-            <input type="checkbox" name="no" id="terms-no">
+            <div class="radios">
+                <label for="yes">Yes</label>
+                <input type="radio" name="yes-no" id="terms-yes">
+                <label for="no">No</label>
+                <input type="radio" name="yes-no" id="terms-no">
+            </div>
         </div>
-        <div class="input-group">
+        <div class="input-group submit">
             <input type="submit" value="Submit" id="submit">
         </div>        
     </form>
+    <footer>
+        <p>Created by <a target="_blank" href="https://wavyadri.github.io/">Adriana Calvo-Matos</a></p>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>

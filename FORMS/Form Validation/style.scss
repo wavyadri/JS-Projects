@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+
+$black: #011627;
+$light: #7c8483;
+$primary: #f0eff4;
+$secondary: #663f46;
+$danger: #e63946;
+$success: #2afc98;
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  @include flex-col();
+  font-family: "Oxygen", sans-serif;
+  padding-bottom: 5vh;
+}
+
+header {
+  margin-top: 5vh;
+  h1 {
+    margin-bottom: 20px;
+  }
+}
+
+form {
+  padding: 20px 20px;
+  border: 2px solid $black;
+  border-radius: 5px;
+
+  input {
+    height: 30px;
+    text-indent: 5px;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    label {
+      margin-bottom: 5px;
+    }
+  }
+
+  .privacy {
+    justify-content: center;
+    height: 30px;
+
+    input {
+      height: 15px;
+      width: 15px;
+      cursor: pointer;
+    }
+  }
+
+  .submit {
+    input {
+      margin-top: 15px;
+      cursor: pointer;
+    }
+  }
+}
+
+footer {
+  height: 5vh;
+  width: 100vw;
+  background-color: $black;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+
+  p {
+    color: $light;
+  }
+
+  a {
+    color: $light;
+    text-decoration: none;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
