@@ -15,13 +15,13 @@
         <div class="input-group pronouns">
             <label for="pronouns">Pronoun</label>
             <select name="pronouns" id="pronouns">
-                <option value="none" selected="selected"> -- Select one -- </option>
-                <option value="she">She</option>
-                <option value="he">He</option>
-                <option value="they">They</option>
-                <option value="ze">Ze</option>
-                <option value="ve">Ve</option>
-                <option value="na">Rather not say</option>
+                <option class="js-pronouns" value="none" selected="selected"> -- Select one -- </option>
+                <option class="js-pronouns" value="she">She</option>
+                <option class="js-pronouns" value="he">He</option>
+                <option class="js-pronouns" value="they">They</option>
+                <option class="js-pronouns" value="ze">Ze</option>
+                <option class="js-pronouns" value="ve">Ve</option>
+                <option class="js-pronouns" value="na">Rather not say</option>
             </select>
         </div>
         <div class="input-group full-name">
@@ -35,6 +35,10 @@
         <div class="input-group password">
             <label for="password">Password</label>
             <input type="password" name="password" id="password">
+        </div>
+        <div class="input-group confirm-password">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" name="confirm-password" id="confirm-password">
         </div>
         <div class="input-group privacy">
             <p>Do you accept that your information will be used for nothing?</p>

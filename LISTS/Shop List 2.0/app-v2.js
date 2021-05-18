@@ -6,6 +6,7 @@ createItem = (newItem) => {
     const list = document.querySelector('.shopping-list');
     // select current item being passed into the func in the DOM (only works if it already exists)
     const item = document.querySelector(`[data-key='${newItem.id}']`);
+    console.log(item);
 
     if (newItem.deleted) {
         item.remove();
