@@ -58,14 +58,14 @@ form .input-group label {
   margin-bottom: 5px;
 }
 
-form .privacy {
+form .priv {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   height: 30px;
 }
 
-form .privacy input {
+form .priv input {
   height: 15px;
   width: 15px;
   cursor: pointer;

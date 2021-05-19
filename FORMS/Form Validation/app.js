@@ -1,6 +1,7 @@
 const pronouns = document.querySelector('#pronouns');
-const fullName = document.querySelector('#full-name');
+const firstName = document.querySelector('#first-name');
 
+let currentErr = [];
 const errors = [
     {
         id: 'pronouns',
@@ -8,7 +9,7 @@ const errors = [
         error: false, 
     },
     {
-        id: 'full-name',
+        id: 'first-name',
         message: 'Error! Enter a name',
         error: false, 
     },
@@ -32,17 +33,21 @@ const errors = [
 validateForm = (e) => {
     e.preventDefault();
 
+    const nameReg = /^[a-zA-Z]+$/
+    // const email_reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    // const pass_reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
     // pronouns error
     if (pronouns.value == 'none') {
-        // pronounsErr();
         displayErr('pronouns');
-        //pronounsErr();
+        console.log('pronoun error')
         // return false;
     }
 
     // name error
-    if (fullName.value === '') {
-        displayErr('full-name');
+    if (firstName.value == '' || (!nameReg.test(firstName.value))) {
+        displayErr('first-name');
+        console.log('name error')
         // return false;
     }
 
@@ -51,27 +56,32 @@ validateForm = (e) => {
     // if any are true
     // return false (aka do not submit form)
 
-
-    // const email_reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    // const pass_reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    
     console.log('form submitted')
 
 
 }
 
-displayErr = (section) => {
-    const index = errors.findIndex(error => error.id === section);
+displayErr = (currentErr) => {
+    // const index = errors.findIndex(error => error.id === section);
+    const index = errors.findIndex(error => error.id === currentErr[i]);
+
+    currentErr = [];
+
+    currentErr.push(`${errors[index].id}`);
+    console.log(currentErr);
 
     const newEle = document.querySelector(`.${section}`);
     const node = document.createElement('p');
     node.setAttribute('class', `${errors[index].id}-err`); /// or this could just be ('class', 'err') if they can all be styled the same
     node.innerHTML = `${errors[index].message}`;
+    newEle.append(node);
 
-    if (document.contains(node)) {
-        console.log('already exists')
-    } else {
-        newEle.append(node);
-    }
+    // if (currentErr.indexOf(section) > -1) {
+    //     console.log('already exists')
+    // } else {
+        
+    // }
 }
 
 // pronounsErr = () => {

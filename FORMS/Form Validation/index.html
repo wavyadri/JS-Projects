@@ -12,7 +12,7 @@
         <h1>Sign Up</h1>
     </header>
     <form id="register">
-        <div class="input-group pronouns">
+        <div class="input-group">
             <label for="pronouns">Pronoun</label>
             <select name="pronouns" id="pronouns">
                 <option class="js-pronouns" value="none" selected="selected"> -- Select one -- </option>
@@ -23,24 +23,29 @@
                 <option class="js-pronouns" value="ve">Ve</option>
                 <option class="js-pronouns" value="na">Rather not say</option>
             </select>
+            <div class="pronouns"></div>
         </div>
-        <div class="input-group full-name">
-            <label for="full-name">Full Name</label>
-            <input type="text" name="full-name" id="full-name">
+        <div class="input-group">
+            <label for="first-name">First Name</label>
+            <input type="text" name="first-name" id="first-name">
+            <div class="first-name"></div>
         </div>
-        <div class="input-group email">
+        <div class="input-group">
             <label for="email">Email</label>
             <input type="email" name="email" id="email">
+            <div class="email"></div>
         </div>
-        <div class="input-group password">
+        <div class="input-group">
             <label for="password">Password</label>
             <input type="password" name="password" id="password">
+            <div class="password"></div>
         </div>
-        <div class="input-group confirm-password">
+        <div class="input-group">
             <label for="confirm-password">Confirm Password</label>
             <input type="password" name="confirm-password" id="confirm-password">
+            <div class="confirm-password"></div>
         </div>
-        <div class="input-group privacy">
+        <div class="input-group priv">
             <p>Do you accept that your information will be used for nothing?</p>
             <div class="radios">
                 <label for="yes">Yes</label>
@@ -48,6 +53,7 @@
                 <label for="no">No</label>
                 <input type="radio" name="yes-no" id="terms-no">
             </div>
+            <div class="privacy"></div>
         </div>
         <div class="input-group submit">
             <input type="submit" value="Submit" id="submit">
@@ -57,6 +63,6 @@
         <p>Created by <a target="_blank" href="https://wavyadri.github.io/">Adriana Calvo-Matos</a></p>
     </footer>
 
-    <script src="app.js"></script>
+    <script src="app-v3.js"></script>
 </body>
 </html>
