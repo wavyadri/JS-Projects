@@ -30,3 +30,4 @@ Build core JS skills
 
 05/20 Completed FORMS > Form Validation.
       Incorperated a variety of form inputs such as text, radio, select and submit to practice manipulating each with JS. Also practiced array methods such as forEach, map, join.
+      After a month of focusing on vanilla JS, I will now resume FCC to pick up where I left off with React & Redux.
