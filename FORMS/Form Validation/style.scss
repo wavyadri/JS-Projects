@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
-$black: #011627;
-$light: #7c8483;
-$primary: #f0eff4;
+$black: #421820;
+$light: #cd5d67;
+$primary: #f2e3bc;
 $secondary: #663f46;
 $danger: #e63946;
 $success: #2afc98;
@@ -24,12 +24,13 @@ body {
   @include flex-col();
   font-family: "Oxygen", sans-serif;
   padding-bottom: 5vh;
+  color: $black;
 }
 
 header {
-  margin-top: 5vh;
+  margin-top: 10px;
   h1 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 }
 
@@ -37,6 +38,8 @@ form {
   padding: 20px 20px;
   border: 2px solid $black;
   border-radius: 5px;
+  width: 400px;
+  height: 100%;
 
   input {
     height: 30px;
@@ -50,22 +53,20 @@ form {
     label {
       margin-bottom: 5px;
     }
+    #submit {
+      margin-bottom: 0px;
+      cursor: pointer;
+    }
   }
 
   .priv {
     justify-content: center;
     height: 30px;
+    margin: 40px 0px;
 
     input {
       height: 15px;
       width: 15px;
-      cursor: pointer;
-    }
-  }
-
-  .submit {
-    input {
-      margin-top: 15px;
       cursor: pointer;
     }
   }
@@ -83,14 +84,41 @@ footer {
   bottom: 0;
 
   p {
-    color: $light;
+    color: $primary;
   }
 
   a {
-    color: $light;
+    color: $primary;
     text-decoration: none;
     &:hover {
-      color: $primary;
+      color: $light;
     }
+  }
+}
+
+.err {
+  color: $danger;
+  font-size: 12px;
+  padding: 3px;
+}
+
+.submit-err {
+  color: $danger;
+  font-size: 12px;
+  padding: 3px 3px 0px 3px;
+}
+
+// Mobile Responsive
+@media screen and (max-width: 450px) {
+  header {
+    margin: 10px;
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+  }
+  form {
+    margin-bottom: 5vh;
+    width: 260px;
   }
 }
