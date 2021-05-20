@@ -26,5 +26,7 @@ Build core JS skills
              Add counter.
              
 05/12 Completed v2 of LISTS > Shop List 2.0.
-      While testing mobile responsive version, I discovered that I need to raise the threshold of max-width to 430px to account for the latest iphone 12 pro max.         
-             
+      While testing mobile responsive version, I discovered that I need to raise the threshold of max-width to 430px to account for the latest iphone 12 pro max.     
+
+05/20 Completed FORMS > Form Validation.
+      Incorperated a variety of form inputs such as text, radio, select and submit to practice manipulating each with JS. Also practiced array methods such as forEach, map, join.
